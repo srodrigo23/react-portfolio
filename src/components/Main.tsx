@@ -11,7 +11,7 @@ function Main() {
   // Function will execute on click of button
   const onButtonClick = () => {    
     // using Java Script method to get PDF file
-    fetch("CV.pdf").then((response) => {
+    fetch("cv.pdf").then((response) => {
         response.blob().then((blob) => {
             // Creating new object of PDF file
             const fileURL =
