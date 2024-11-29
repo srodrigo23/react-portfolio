@@ -8,6 +8,25 @@ import { Button } from "@mui/material";
 
 function Main() {
 
+  // Function will execute on click of button
+  const onButtonClick = () => {    
+    // using Java Script method to get PDF file
+    fetch("CV.pdf").then((response) => {
+        response.blob().then((blob) => {
+            // Creating new object of PDF file
+            const fileURL =
+                window.URL.createObjectURL(blob);
+                
+            // Setting various property values
+            let alink = document.createElement("a");
+            alink.href = fileURL;
+            alink.download = "CV.pdf";
+            alink.click();
+        });
+    });
+  };
+
+
   return (
     <div className="container">
       <div className="about-section">
@@ -28,7 +47,7 @@ function Main() {
           </div>
 
           <div className="download-button">
-            <Button variant="text" endIcon={<DownloadIcon/>}>Download CV</Button>
+            <Button variant="text" endIcon={<DownloadIcon/>} onClick={onButtonClick}>Download CV</Button>
           </div>
           
         </div>
