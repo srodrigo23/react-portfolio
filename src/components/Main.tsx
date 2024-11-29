@@ -20,7 +20,7 @@ function Main() {
             // Setting various property values
             let alink = document.createElement("a");
             alink.href = fileURL;
-            alink.download = "CV.pdf";
+            alink.download = "cv.pdf";
             alink.click();
         });
     });
